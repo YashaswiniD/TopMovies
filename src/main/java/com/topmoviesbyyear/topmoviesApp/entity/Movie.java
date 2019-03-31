@@ -11,12 +11,12 @@ import javax.validation.constraints.NotBlank;
 public class Movie {
 
 
-    @Column(name = "release_year")
+    @Column(name = "year")
     @NotBlank(message = "Please enter the movie released year")
     private Integer year;
 
     @Id
-    @Column(name = "IMDB_ID", updatable = false, unique = true)
+    @Column(name = "imdb_id", updatable = false, unique = true)
     @NotBlank(message = "ImdbId is required")
     private String imdbId;
 
@@ -24,22 +24,31 @@ public class Movie {
     @NotBlank(message = "Movie name is required")
     private String movieName;
 
-    @Column(name = "movie_url")
-    private String movieUrl;
+    @Column(name = "poster_url")
+    private String poster_url;
 
     @Column(name = "genre")
     private String genre;
+
+    @Column(name = "imdb_rating")
+    private String imdb_rating;
+
+    @Column(name = "rotten_tomatoes_rating")
+    private String rotten_tomatoes_rating;
+
 
 
     public Movie() {
     }
 
-    public Movie(@NotBlank(message = "Please enter the movie released year") Integer year, @NotBlank(message = "ImdbId is required") String imdbId, @NotBlank(message = "Movie name is required") String movieName, String movieUrl, String genre) {
+    public Movie(@NotBlank(message = "Please enter the movie released year") Integer year, @NotBlank(message = "ImdbId is required") String imdbId, @NotBlank(message = "Movie name is required") String movieName, String poster_url, String genre, String imdb_rating, String rotten_tomatoes_rating) {
         this.year = year;
         this.imdbId = imdbId;
         this.movieName = movieName;
-        this.movieUrl = movieUrl;
+        this.poster_url = poster_url;
         this.genre = genre;
+        this.imdb_rating = imdb_rating;
+        this.rotten_tomatoes_rating = rotten_tomatoes_rating;
     }
 
     public String getImdbId() {
@@ -66,12 +75,12 @@ public class Movie {
         this.year = year;
     }
 
-    public String getMovieUrl() {
-        return movieUrl;
+    public String getPoster_url() {
+        return poster_url;
     }
 
-    public void setMovieUrl(String movieUrl) {
-        this.movieUrl = movieUrl;
+    public void setPoster_url(String poster_url) {
+        this.poster_url = poster_url;
     }
 
     public String getGenre() {
@@ -80,5 +89,21 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getImdb_rating() {
+        return imdb_rating;
+    }
+
+    public void setImdb_rating(String imdb_rating) {
+        this.imdb_rating = imdb_rating;
+    }
+
+    public String getRotten_tomatoes_rating() {
+        return rotten_tomatoes_rating;
+    }
+
+    public void setRotten_tomatoes_rating(String rotten_tomatoes_rating) {
+        this.rotten_tomatoes_rating = rotten_tomatoes_rating;
     }
 }
