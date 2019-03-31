@@ -1,6 +1,6 @@
 # React-spring boot project to list top 20 movies by year(2018,2017,2016)
 Deployed in heroku
-Access the application with url: https://top-movies-by-year.herokuapp.com/
+Website for application: https://top-movies-by-year.herokuapp.com/
 
 Technologies used:
 Front end--Reactjs,Redux,Bootstrap
